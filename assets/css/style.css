@@ -22,6 +22,7 @@ body {
 
 #header {
     color: white;
+    font-size: 22px;
 }
 
 #searchButtonBox {
@@ -60,4 +61,8 @@ img {
     width: auto;
     height: auto;   
     z-index: 20;
+}
+
+.stateBreed {
+    margin-top: 40px;
 }
