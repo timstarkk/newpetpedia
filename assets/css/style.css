@@ -9,6 +9,12 @@
     padding: 0px;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     font-family: 'Roboto', sans-serif; 
 }
@@ -25,7 +31,7 @@ body {
     font-size: 22px;
 }
 
-#searchButtonBox {
+.searchButtonBox {
     display: flex;
     align-items: flex-end;
     justify-content: center;

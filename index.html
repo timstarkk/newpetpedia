@@ -8,10 +8,11 @@
     <title>New Pet Pedia</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <meta http-equiv=“Content-Security-Policy” content=“upgrade-insecure-requests”>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
 
     <style>
         /* .row {
@@ -53,46 +54,89 @@
         <div class="container">
             <form>
                 <div class="form-row  searchRow" id="">
-                    <div class="col-12 col-md-4 col-lg-4 col-xl-4" id="searchButtonBox">
-                        <button class="btn btn-success" id="search">Dog</button>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4 searchButtonBox">
+                        <button class="btn btn-success search" id="dog">Dog</button>
                     </div>
-                    <div class="col-12 col-md-4 col-lg-4 col-xl-4" id="searchButtonBox">
-                        <button class="btn btn-success" id="search">Cat</button>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4 searchButtonBox">
+                        <button class="btn btn-success search" id="cat">Cat</button>
                     </div>
-                    <div class="col-12 col-md-4 col-lg-4 col-xl-4" id="searchButtonBox">
-                        <button class="btn btn-success" id="search">Other</button>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4 searchButtonBox">
+                        <button class="btn btn-success search" id="other">Other</button>
                     </div>
                 </div>
                 <div class="form-row stateBreed">
                     <div class="form-group col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city">
                     </div>
                     <div class="form-group col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
+                        <label for="state">State</label>
+                        <select id="state" class="form-control">
                             <option selected>Choose...</option>
-                            <option>...</option>
+                            <option>AL</option>
+                            <option>AK</option>
+                            <option>AZ</option>
+                            <option>AR</option>
+                            <option>CA</option>
+                            <option>CO</option>
+                            <option>CT</option>
+                            <option>DE</option>
+                            <option>FL</option>
+                            <option>GA</option>
+                            <option>HI</option>
+                            <option>ID</option>
+                            <option>IL</option>
+                            <option>IN</option>
+                            <option>IA</option>
+                            <option>KS</option>
+                            <option>KY</option>
+                            <option>LA</option>
+                            <option>ME</option>
+                            <option>MD</option>
+                            <option>MA</option>
+                            <option>MI</option>
+                            <option>MN</option>
+                            <option>MS</option>
+                            <option>MO</option>
+                            <option>MT</option>
+                            <option>NE</option>
+                            <option>NV</option>
+                            <option>NH</option>
+                            <option>NJ</option>
+                            <option>NM</option>
+                            <option>NY</option>
+                            <option>NC</option>
+                            <option>ND</option>
+                            <option>OH</option>
+                            <option>OK</option>
+                            <option>OR</option>
+                            <option>PA</option>
+                            <option>RI</option>
+                            <option>SC</option>
+                            <option>SD</option>
+                            <option>TN</option>
+                            <option>TX</option>
+                            <option>UT</option>
+                            <option>VT</option>
+                            <option>VA</option>
+                            <option>WA</option>
+                            <option>WV</option>
+                            <option>WI</option>
+                            <option>WY</option>
                         </select>
                     </div>
                     <div
                         class="form-group col-12 col-sm-12 offset-md-1 col-md-3 offset-lg-1  col-lg-3 offset-xl-1 col-xl-3">
-                        <label for="inputState">Breed</label>
-                        <select id="inputState" class="form-control">
+                        <label for="breed">Breed</label>
+                        <select id="breed" class="form-control">
                             <option selected>Choose...</option>
-                            <option>...</option>
                         </select>
+                    </div>
+                    <div class="col-12 center">
+                        <button class="btn btn-success" id="search-button">Search</button>
                     </div>
                 </div>
             </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            <div class="row buttonsRow">
-                <div class="col-12" id="buttons">
-                </div>
-            </div>
         </div>
     </div>
     <div class="row">
@@ -130,6 +174,7 @@
             this is the footer
         </footer>
     </div> -->
+
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 

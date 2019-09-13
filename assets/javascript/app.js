@@ -1,24 +1,45 @@
-var data = {
-    "grant_type": "client_credentials",
-    "client_id": "qdbZnyx35Eucht2eGTONDw6UlgjtwO2EoSp8u8ZSBwGurYa2ba",
-    "client_secret": "JAVzjeOIao4gdrvMT4tQUDUGh1Lu06XGTw9HWYwn"
-};
+let type = "";
+let city = "";
+let state = "";
+let breed = "";
 
-// var url = "https://api.petfinder.com/v2/oauth2/qdbZnyx35Eucht2eGTONDw6UlgjtwO2EoSp8u8ZSBwGurYa2ba"
-// var url = "https://cors.io/?http://https://api.petfinder.com/v2/animals"
-var url = "https://api.petfinder.com/v2/animals"
+$(document).ready(function () {
+    $('.search').click(function (event) {
+        event.preventDefault();
+        type = this.id;
+        $('#breed').html(`<option selected>Choose...</option>`);
 
-function callPetfinder() {
-    $.ajax({
-        url,
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        method: "GET",
-    }).then(function (response) {
-        data = response.data;
-        console.log(data);
+        var pf = new petfinder.Client({ apiKey: "DEEgmJQqmtdmPQKmF6fVKXW9EzOjUR4EBMkSkX5DqyapJ1keTP", secret: "Aa7kiPZFw71Z5YWnOUosFbNtXvPaELvcbV0t6On2" });
+
+        pf.animalData.breeds(`${type}`)
+            .then(response => {
+                console.log(response);
+
+                for (i = 0; i < response.data.breeds.length; i++) {
+
+                    $('#breed').append(`<option>${response.data.breeds[i].name}</option>`)
+                }
+            });
     })
-}
 
-callPetfinder();
+    $('#search-button').click(function (event) {
+        event.preventDefault();
+        city = $('#city').val().trim();
+        state = $('#state').val();
+        breed = $('#breed').val();
+
+        console.log(type, city, state, breed);
+
+        var pf = new petfinder.Client({ apiKey: "DEEgmJQqmtdmPQKmF6fVKXW9EzOjUR4EBMkSkX5DqyapJ1keTP", secret: "Aa7kiPZFw71Z5YWnOUosFbNtXvPaELvcbV0t6On2" });
+
+        pf.animal.search({ type: type, breed: breed, location: `${city}, ${state}` })
+            .then(function (response) {
+                console.log(response)
+
+            })
+            .catch(function (error) {
+                // Handle the error
+            });
+
+    })
+})
