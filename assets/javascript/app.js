@@ -7,7 +7,27 @@ let selectedAnimal = {};
 
 const resultIds = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty']
 
+// Config for Firebase
+var firebaseConfig = {
+    apiKey: "AIzaSyAk4d22ZQPdMDIPGPVIFbMVC7Z0DA4Vz6U",
+    authDomain: "pet-a-pedia.firebaseapp.com",
+    databaseURL: "https://pet-a-pedia.firebaseio.com",
+    projectId: "pet-a-pedia",
+    storageBucket: "pet-a-pedia.appspot.com",
+    messagingSenderId: "299646572010",
+    appId: "1:299646572010:web:b52b998d7a0a03501e8e93"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Store Database Variable for firebase
+const database = firebase.database();
+const root = database.ref();
+
 $(document).ready(function () {
+    if (window.location.href.substr(window.location.href.length - 12) === 'profile.html') {
+        console.log('hello')
+    }
+
     $('.search').click(function (event) {
         event.preventDefault();
         type = this.id;
@@ -46,9 +66,7 @@ $(document).ready(function () {
 
                     <div class="row">
                     <div class="col-12 center">
-                    <a href="profile.html" class="petLink">
                     <img class="petPic" src="${response.data.animals[i].photos[0].medium}" alt="" id="${i}"></img>
-                    </a>
                     </div>
 
                         <div class="col-12 center">
@@ -65,8 +83,14 @@ $(document).ready(function () {
 
     });
 
-    $(document).on('click', '.petLink', function (event) {
+    $(document).on('click', '.petPic', function (event) {
         selectedAnimal = apiResponse.data.animals[this.id];
         console.log(apiResponse.data.animals[this.id]);
+
+        root.set({
+            mostRecentAnimal: { selectedAnimal },
+        })
+
+        window.location.href = 'profile.html'
     });
 })
