@@ -56,6 +56,9 @@ body {
     margin: 10px auto;
 }
 
+.petPic {
+    max-height: 150px;
+}
 
 .searchButton {
     margin-right: 10px;
@@ -71,4 +74,8 @@ img {
 
 .stateBreed {
     margin-top: 40px;
+}
+
+.mainRow {
+    margin-top: 20px;
 }
