@@ -62,7 +62,7 @@ $(document).ready(function () {
                 <p>
                 Address: <br>${snapshot.val().mostRecentAnimal.selectedAnimal.contact.address.address1} ${snapshot.val().mostRecentAnimal.selectedAnimal.contact.address.city},${snapshot.val().mostRecentAnimal.selectedAnimal.contact.address.state} ${snapshot.val().mostRecentAnimal.selectedAnimal.contact.address.postcode}<br><br>
                 Email: ${snapshot.val().mostRecentAnimal.selectedAnimal.contact.email}<br><br>
-                Phone: ${snapshot.val().mostRecentAnimal.selectedAnimal.contact.address.address1}
+                Phone: ${snapshot.val().mostRecentAnimal.selectedAnimal.contact.phone}
                 
                 </p>
                 </div>
