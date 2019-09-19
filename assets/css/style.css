@@ -83,3 +83,8 @@ img {
 #wikitext {
     margin-top: 40px;
 }
+
+#homeLink:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
