@@ -49,7 +49,8 @@ $(document).ready(function () {
                 <div class="col-12 center">
                 <p>
                 Gender: ${snapshot.val().mostRecentAnimal.selectedAnimal.gender}<br>
-                Size: ${snapshot.val().mostRecentAnimal.selectedAnimal.size}
+                Size: ${snapshot.val().mostRecentAnimal.selectedAnimal.size}<br>
+                Status: ${snapshot.val().mostRecentAnimal.selectedAnimal.status}
                 </p>
                 </div>
 
