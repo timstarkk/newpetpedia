@@ -94,3 +94,7 @@ img {
     color: green;
     border: 2px solid green;
 }
+
+img:hover {
+    cursor: pointer;
+}
