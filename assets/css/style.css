@@ -88,3 +88,9 @@ img {
     cursor: pointer;
     text-decoration: none;
 }
+
+.enabled {
+    background: white;
+    color: green;
+    border: 2px solid green;
+}
