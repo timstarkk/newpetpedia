@@ -49,7 +49,8 @@ $(document).ready(function () {
                 <div class="col-12 center">
                 <p>
                 Gender: ${snapshot.val().mostRecentAnimal.selectedAnimal.gender}<br>
-                Size: ${snapshot.val().mostRecentAnimal.selectedAnimal.size}
+                Size: ${snapshot.val().mostRecentAnimal.selectedAnimal.size}<br>
+                Status: ${snapshot.val().mostRecentAnimal.selectedAnimal.status}
                 </p>
                 </div>
 
@@ -228,6 +229,10 @@ $(document).ready(function () {
         event.preventDefault();
         type = this.id;
         $('#breed').html(`<option selected>Choose...</option>`);
+        $('#dog').removeClass('enabled');
+        $('#cat').removeClass('enabled');
+        $('#other').removeClass('enabled');
+        $(`#${type}`).addClass('enabled');
 
         var pf = new petfinder.Client({ apiKey: "DEEgmJQqmtdmPQKmF6fVKXW9EzOjUR4EBMkSkX5DqyapJ1keTP", secret: "Aa7kiPZFw71Z5YWnOUosFbNtXvPaELvcbV0t6On2" });
 

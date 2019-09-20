@@ -83,3 +83,18 @@ img {
 #wikitext {
     margin-top: 40px;
 }
+
+#homeLink:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.enabled {
+    background: white;
+    color: green;
+    border: 2px solid green;
+}
+
+img:hover {
+    cursor: pointer;
+}
