@@ -37,11 +37,11 @@ $(document).ready(function () {
 
                 <div class="row infoRow">
 
-                <div class="col-6 center">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 center">
                 <img src="${snapshot.val().mostRecentAnimal.selectedAnimal.photos[0].medium}">
                 </img>
                 </div>
-                <div class="col-6 center">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 center">
                 <div class="row">
                 <div class="col-12 center">
                 <h5>Details: </h5>
